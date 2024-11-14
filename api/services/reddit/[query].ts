@@ -19,7 +19,7 @@ export default async function handler(
     const response = await fetch(`https://reddit.com/r/${query}`, 'GET');
     const body = await response.text();
     const availability = body.includes(
-      'Sorry, there aren’t any communities on Reddit with that name.'
+      'Community not found'
     );
     send(res, { availability });
   } catch (err: any) {
